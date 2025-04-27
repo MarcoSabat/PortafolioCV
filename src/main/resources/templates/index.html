@@ -52,11 +52,6 @@
                     <div th:if="${mensajeError}" class="alert alert-danger mt-3 text-center" role="alert">
                         <span th:text="${mensajeError}">Usuario o contraseña incorrectos</span>
                     </div>
-
-                    <!-- (opcional) Mensaje de éxito -->
-                    <div th:if="${mensajeExito}" class="alert alert-success mt-3 text-center" role="alert">
-                        <span th:text="${mensajeExito}">Sesión iniciada exitosamente</span>
-                    </div>
                 </form>
             </div>
         </section>
