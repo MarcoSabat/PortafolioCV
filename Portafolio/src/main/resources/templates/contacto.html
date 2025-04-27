@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Contacto</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container">
+            <div class="nav-links mx-auto">
+                <a class="text-white mx-3" href="/" th:href="@{/}">Inicio</a>
+                <a class="text-white mx-3" href="/experiencia" th:href="@{/experiencia}">Acerca de</a>
+                <a class="text-white mx-3" href="/contacto" th:href="@{/contacto}">Contacto</a>
+                <a class="text-white mx-3" href="/curriculum" th:href="@{/curriculum}">Curriculum</a>
+                <a class="text-white mx-3" href="/proyectos" th:href="@{/proyectos}">Proyectos</a>
+            </div>
+            <div class="ml-auto">
+                <a href="https://linkedin.com" target="_blank" class="text-white mx-2">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com" target="_blank" class="text-white mx-2">
+                    <i class="fab fa-github"></i>
+                </a>
+                <button id="theme-toggle" class="btn btn-outline-light ml-3">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <section class="card mx-auto shadow" style="width: 90%; max-width: 800px;">
+            <div class="card-body">
+                <h2 class="card-title text-center">Contáctame</h2>
+                <form th:action="@{/correo/enviar}" method="post">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Tu nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correoElectronico" class="form-control" placeholder="Tu correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" class="form-control" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+
+                    <!-- Alerta de éxito -->
+                    <div th:if="${successMessage}" class="alert alert-success mt-3 text-center" role="alert">
+                        <span th:text="${successMessage}">¡Mensaje enviado correctamente!</span>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        © 2024 Grupo 25
+    </footer>
+</body>
+</html>
