@@ -1,6 +1,0 @@
-com\portafolio\service\CorreoService.class
-com\portafolio\controller\PortafolioController.class
-com\portafolio\model\Correo.class
-com\portafolio\service\impl\CorreoServiceImpl.class
-com\portafolio\controller\CorreoController.class
-com\portafolio\PortafolioApplication.class
